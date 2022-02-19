@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+<!-- End Navigation Bar -->
+{% block content %}
+
+    <div class="body">
+        <!-- Delete Profile Form -->
+        <h1>Are you sure you want to delete your profile?</h1>
+        <div class="form">
+
+
+            <form method="POST" action="{% url 'delete profile page' profile_to_delete.pk %}">
+                {% csrf_token %}
+
+                {#                form must not be visible#}
+                {#                {{ form }}#}
+
+                <!-- Confirm Button -->
+                <button class="button delete-lg">Confirm</button>
+            </form>
+            <!-- End Delete Profile Form -->
+        </div>
+    </div>
+
+{% endblock %}
