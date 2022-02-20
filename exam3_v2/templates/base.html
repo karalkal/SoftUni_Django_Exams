@@ -1,0 +1,42 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<title>Notes</title>
+</head>
+
+<body>
+<!--navigation bar-->
+<header>
+    <nav>
+        <ul>
+            <li class="img"><img src="{% static 'images/note.png' %}"/></li>
+            <li><a href="/">Notes</a></li>
+            <li class="right">
+                {% if not hide_add_note_button %}
+                    <a href="{% url 'add note page' %}">Add Note</a>
+                {% endif %}
+                {% if not hide_profile_button %}
+                    <a href="{% url 'profile page' %}">Profile</a>
+                {% endif %}
+
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="body">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<!--footer-->
+<footer>
+    <div>Python Web Basics Exam @SoftUni</div>
+</footer>
+</body>
+</html>

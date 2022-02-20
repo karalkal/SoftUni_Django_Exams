@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <div class="body">
+        <!--headings-->
+        <h1>Note Details</h1>
+        <!--headings-->
+
+        <!--details note box-->
+        <div class="note-details-container">
+            <h2>{{ note_to_view.title }}</h2>
+            <img class="detail-img" src="{{ note_to_view.image_url }}"
+                 alt="{{ note_to_view.title }}"/>
+            <div>
+                <p>Content</p>
+            </div>
+            <p>
+                {{ note_to_view.content }}
+            </p>
+            <div class="right">
+                <a class="button edit" href="{% url 'edit note page' note_to_view.pk %}">Edit</a>
+                <a class="button delete" href="{% url 'delete note page' note_to_view.pk %}">Delete</a>
+            </div>
+        </div>
+        <!--end details note box-->
+    </div>
+
+{% endblock %}
