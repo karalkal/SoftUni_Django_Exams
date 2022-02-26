@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Details Page -->
+<section id="details-page" class="details">
+    <div class="book-information">
+        <h3>{{ book_to_show.title}} </h3>
+        <p class="type">{{ book_to_show.type}}</p>
+        <p class="img"><img src="{{ book_to_show.image}}" alt="{{ book_to_show.description}}"></p>
+        <div class="actions">
+            <a class="button" href="{% url 'edit book page' book_to_show.pk %}">Edit</a>
+            <a class="button" href="{% url 'delete book page' book_to_show.pk %}">Delete</a>
+        </div>
+    </div>
+    <div class="book-description">
+        <h3>Description:</h3>
+        <p>{{ book_to_show.description}}</p>
+    </div>
+</section>
+{% endblock %}
